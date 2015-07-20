@@ -134,10 +134,18 @@
             <dl>
               <dt>Query / search query</dt>
               <dd>
-                Used for retrieving matching documents from index, ex. <code>book_title: Tadeusz^2 AND text: ojczyzna</code>
+                Used for retrieving matching documents from index, ex.:
+                <pre><code>'book_title:Tadeusz^2 AND text:ojczyzna'</code></pre>
+
+                <pre><code>'+book_title:Tadeusz^2 +text:ojczyzna'</code></pre>
                 
                 <pre><code contenteditable>
-TermQuery tq = new TermQuery(new Term("book_title", "Tadeusz"));
+TermQuery titleQuery = new TermQuery(new Term("book_title", "Tadeusz"));
+titleQuery.setBoost(2);
+TermQuery textQuery = new TermQuery(new Term("text", "ojczyzna"));
+BooleanQuery booleanQuery = new BooleanQuery();
+booleanQuery.add(titleQuery, BooleanClause.Occur.MUST);
+booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
                 </code></pre>
               </dd>
             </dl>
@@ -146,12 +154,16 @@ TermQuery tq = new TermQuery(new Term("book_title", "Tadeusz"));
           <section id="lucene_glossary_3">
             <h2>Glossary - cont.</h2>
             <dl>
+              <dt>Similarity</dt>
+              <dd>Determines scores for documents matched by query</dd>
+            </dl>
+            <dl>
               <dt>Scoring / Score</dt>
               <dd>A set of parameters / formulas which produce a way to determine how "accurate" is a match of a document (per query)</dd>
             </dl>
             <dl>
-              <dt>Similarity</dt>
-              <dd>Determines scores for documents matched by query</dd>
+              <dt>Boost</dt>
+              <dd>A way of changing scrore of a field (it's applied to a computed score)</dd>
             </dl>
           </section>
 
