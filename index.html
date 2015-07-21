@@ -121,12 +121,16 @@
               <dt>Field</dt>
               <dd>Stores a piece of information (content)</dd>
               <dt>Index</dt>
-              <dd>Database which stores documents and fields in Lucene-specific format</dd>
+              <dd>Database which stores documents and fields in Lucene-specific format (extras: index reader / writer, segments, inverted index, term vectors)</dd>
               <dt>Indexed field</dt>
               <dd>A field which is applicable for searching</dd>
               <dt>Stored field</dt>
               <dd>A field which original content is sored as-is in index</dd>
             </dl>
+            <aside class="notes" data-markdown>
+- Lucene index internals: http://www.slideshare.net/lucenerevolution/what-is-inaluceneagrandfinal
+- What's in segment? http://image.slidesharecdn.com/howdoeslucenestoreyourdata-130610085548-phpapp02/95/berlin-buzzwords-2013-how-does-lucene-store-your-data-7-638.jpg?cb=1370855248
+            </aside>
           </section>
 
           <section id="lucene_glossary_2">
@@ -147,6 +151,7 @@ BooleanQuery booleanQuery = new BooleanQuery();
 booleanQuery.add(titleQuery, BooleanClause.Occur.MUST);
 booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
                 </code></pre>
+                Extras: <a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/IndexSearcher.html"><code>IndexSearcher.search</code></a>, collectors, <a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/Weight.html"><code>Weight</code></a>
               </dd>
             </dl>
           </section>
@@ -155,7 +160,7 @@ booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
             <h2>Glossary - cont.</h2>
             <dl>
               <dt>Similarity</dt>
-              <dd>Determines scores for documents matched by query</dd>
+              <dd>Determines scores for documents matched by query (extras: <a href="http://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html">scoring formula</a>)</dd>
             </dl>
             <dl>
               <dt>Scoring / Score</dt>
@@ -170,11 +175,25 @@ booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
           <section id="lucene_implementation">
             <h2>Implementation overview</h2>
             <ul>
-              <li><a href="http://lucene.apache.org/core/5_2_1/core/overview-summary.html#overview_description">API</a></li>
-              <li><a href="http://lucene.apache.org/core/5_2_1/demo/overview-summary.html#overview_description">Demo</a></li>
-              <li><a href="http://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/package-summary.html#package_description">Search</a></li>
-              <li><a href="http://lucene.apache.org/core/5_2_1/core/org/apache/lucene/analysis/package-summary.html#package_description">Analysis</a></li>
+              <li><a href="https://lucene.apache.org/core/5_2_1/core/overview-summary.html#overview_description">API</a></li>
+              <li><a href="https://lucene.apache.org/core/5_2_1/demo/overview-summary.html#overview_description">Demo</a></li>
+              <li><a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/package-summary.html#package_description">Search</a></li>
+              <li><a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/similarities/package-summary.html">Similarities</a></li>
+              <li><a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/analysis/package-summary.html#package_description">Analysis</a></li>
+              <li><a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/document/DateTools.html">Dates</a></li>
               <!-- <li><a href=""></a></li> -->
+            </ul>
+          </section>
+
+        </section>
+
+        <section id="examples">
+
+          <section>
+            <h2>Examples</h2>
+            <ul>
+              <li><a href="http://lucene.apache.org/core/5_2_1/demo/overview-summary.html#overview_description">Demo</a></li>
+              <li>Comparison with our spikes - Eclipse</li>
             </ul>
           </section>
 
@@ -185,7 +204,7 @@ booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
           <section>
             <h2>Summary</h2>
             <ul>
-              <li class="fragment"></li>
+              <li class="fragment">When you need scalable text search engine, which you can use out-of-the box - <strong>don't</strong> use Lucene</li>
               <li class="fragment"></li>
               <li class="fragment"></li>
             </ul>
