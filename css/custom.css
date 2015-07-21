@@ -11,8 +11,11 @@
 .reveal section img {
     border: 0;
 }
-.reveal .section-images img {
-    max-height: 300px;
+.reveal img {
+    max-height: 70%;
+}
+.reveal img.small {
+    max-height: 400px;
 }
 .reveal blockquote {
     width: 80%;
@@ -73,4 +76,11 @@
 }
 .reveal dl dt {
     min-width: 100px;
+}
+@font-face {
+    font-family: Supernatural;
+    src: url('../lib/font/Supernatural_Knight.ttf');
+}
+.reveal .supernatural {
+    font-family: Supernatural;
 }

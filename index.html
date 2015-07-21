@@ -55,6 +55,15 @@
 
         <section id="overview">
 
+          <section id="agenda">
+            <div data-markdown>
+              - What's Lucene?
+              - Lucene vs Solr vs Elasticsearch - history
+              - When to use Lucene?
+
+            </div>
+          </section>
+
           <section id="what_is_lucene">
             <h2>So what's this "Lucene"?</h2>
             <img src="images/logo_lucene.png" alt="Lucene logo" />
@@ -73,8 +82,8 @@
             <img src="images/solr_es_lucene.png" alt="Elasticsearch vs Solr vs Lucene" class="fragment" />
           </section>
 
-          <section id="lucene_solr_es_history">
-            <h2>History</h2>
+          <section id="lucene_solr_es_history_then">
+            <h2 class="supernatural">Then</h2>
             <div data-markdown>
               - 1999 - Lucene created
               - 2001 - Lucene joined ASF (Jakarta)
@@ -83,9 +92,13 @@
               - 2010 - Lucene + Solr merged; first versions of ES released
               - 2012 - Solr 4.0.0 with SolrCloud
             </div>
+          </section>
 
-            <aside class="notes" data-markdown>
-            </aside>
+          <section id="lucene_solr_es_history_now">
+            <h2 class="supernatural">Now</h2>
+            <p><a href="http://blog.sematext.com/2015/01/30/solr-elasticsearch-comparison/"><em>Solr vs. Elasticsearch — How to Decide?</em></a> by Otis Gospodnetić</p>
+            <img src="images/lucene_in_action.jpg" alt="Lucene in Action" class="fragment small" data-fragment-index="2" />
+            <p class="fragment" data-fragment-index="1">No mention of Lucene in the article</p>
           </section>
 
           <section id="ask_so">
@@ -200,9 +213,9 @@ booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
 
         </section>
 
-        <section id="examples">
+        <section>
 
-          <section>
+          <section id="examples">
             <h2>Examples</h2>
             <ul>
               <li><a href="https://lucene.apache.org/core/5_2_1/demo/overview-summary.html#overview_description">Demo</a></li>
@@ -212,14 +225,23 @@ booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
 
         </section>
 
-        <section id="summary">
+        <section>
 
-          <section>
+          <section id="summary">
             <h2>Summary</h2>
             <ul>
-              <li class="fragment">When you need scalable text search engine, which you can use out-of-the box - <strong>don't</strong> use Lucene</li>
-              <li class="fragment"></li>
-              <li class="fragment"></li>
+              <li class="fragment">When you need scalable text search engine, which you can setup easily - <strong>don't</strong> use Lucene</li>
+              <li class="fragment">When you're not that interested in low-level API optimization - <strong>don't</strong> use Lucene</li>
+              <li class="fragment">When you expect some features to be included out-of-the box - <strong>don't</strong> use Lucene</li>
+            </ul>
+          </section>
+
+          <section id="summary_inversed">
+            <h2>Summary - inversed</h2>
+            <ul>
+              <li class="fragment">When you need embedded text search engine, which you can scal to your needs by yourself - use Lucene</li>
+              <li class="fragment">When you'll be doing low-level API - use Lucene</li>
+              <li class="fragment">When you want to tune queries, scores, index format, offsets, highlights, etc. to your specific needs - use Lucene <span class="fragment">(and have a long adventure with Lucene)</span></li>
             </ul>
           </section>
 
