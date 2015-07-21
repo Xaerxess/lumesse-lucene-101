@@ -60,7 +60,10 @@
               - What's Lucene?
               - Lucene vs Solr vs Elasticsearch - history
               - When to use Lucene?
-
+              - Glossary
+              - Implementation overview
+              - Examples
+              - Summary
             </div>
           </section>
 
@@ -148,7 +151,7 @@
               <dt>Indexed field</dt>
               <dd>A field which is applicable for searching</dd>
               <dt>Stored field</dt>
-              <dd>A field which original content is sored as-is in index</dd>
+              <dd>A field which original content is stored as-is in index</dd>
             </dl>
             <aside class="notes" data-markdown>
 - Lucene index internals: http://www.slideshare.net/lucenerevolution/what-is-inaluceneagrandfinal
@@ -186,7 +189,7 @@ booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
             <h2>Glossary - cont.</h2>
             <dl>
               <dt>Similarity</dt>
-              <dd>Determines scores for documents matched by query (extras: <a href="http://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html">scoring formula</a>)</dd>
+              <dd>Determines scores for documents matched by query (extras: <a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html">scoring formula</a>)</dd>
             </dl>
             <dl>
               <dt>Scoring / Score</dt>
@@ -202,7 +205,6 @@ booleanQuery.add(textQuery, BooleanClause.Occur.MUST);
             <h2>Implementation overview</h2>
             <ul>
               <li><a href="https://lucene.apache.org/core/5_2_1/core/overview-summary.html#overview_description">API</a></li>
-              <li><a href="https://lucene.apache.org/core/5_2_1/demo/overview-summary.html#overview_description">Demo</a></li>
               <li><a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/package-summary.html#package_description">Search</a></li>
               <li><a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/search/similarities/package-summary.html">Similarities</a></li>
               <li><a href="https://lucene.apache.org/core/5_2_1/core/org/apache/lucene/analysis/package-summary.html#package_description">Analysis</a></li>
